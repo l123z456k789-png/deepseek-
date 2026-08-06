@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "\nThe video displays a **color bar test pattern** (commonly used for calibrating or testing display devices like TVs/monitors). Key elements:  \n\n1. **Vertical Color Bars**: A series of vertical stripes in standard test colors (black, red, cyan, magenta, blue, yellow, green, red, cyan, and white) form the background, with a white circle overlapping them.  \n2. **Horizontal Color Gradient**: A horizontal rainbow-colored bar at the bottom *shifts or cycles through colors* (e.g., red → violet → blue → green → yellow → red) across the seconds, likely testing color transition/reproduction.  \n3. **Small Black Rectangle**: A black square with a white outline on the right (possibly a contrast/alignment test element).  \n\n\nThis pattern is used to assess color accuracy, display functionality, and ensure proper color rendering on screens. The moving horizontal gradient emphasizes color transition testing."
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}
