@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "\nThe image displays a simple text output showing \"Hello World 123\" followed by a red \"Error: file not found\" message, the line number \"at line 42\", and a blue command \"python app.py --debug\" on a white background."
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

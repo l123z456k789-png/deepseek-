@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "\n**Extracted Text**\n```\nHello World 123\nError: file not found\nat line 42\npython app.py --debug\n```\n\n**Content Type**  \nTerminal/console output displaying an error message and a command used to run a script.\n\n**Language/Format**  \nPlain text (formatted output, likely from a command-line interface).\n\n**OCR Corrections**  \nNo corrections made—all text is clearly legible with no ambiguous characters.\n\n**Quality Notes**  \nAll text is fully visible and unobstructed. The error message (\"Error: file not found\") is highlighted in red (visually, though not preserved in the text block), and the command (\"python app.py --debug\") is in blue (also visual, not preserved in the text block). The structure (error message followed by line number and command) is consistent with typical terminal error output."
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

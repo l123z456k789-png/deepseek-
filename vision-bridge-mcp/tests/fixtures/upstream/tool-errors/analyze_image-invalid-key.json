@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Error: Unexpected error: analyze-image analysis failed: HTTP 401: {\"error\":{\"code\":\"401\",\"message\":\"token expired or incorrect\"}}"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}
