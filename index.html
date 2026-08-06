@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>deepseek- · 识图 MCP 文档站</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background: #0f1420; color: #e6e9f0; line-height: 1.7; }
+  header { padding: 48px 24px 24px; text-align: center; border-bottom: 1px solid #232b3b; }
+  header h1 { margin: 0 0 8px; font-size: 28px; }
+  header p { margin: 0; color: #9aa5b8; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .card { background: #171e2e; border: 1px solid #26304a; border-radius: 10px; padding: 16px; }
+  .card h2 { margin: 0 0 8px; font-size: 17px; }
+  .card p { margin: 0 0 12px; color: #9aa5b8; font-size: 14px; }
+  .card a { color: #7db4ff; text-decoration: none; font-size: 14px; }
+  .card a:hover { text-decoration: underline; }
+  .doc { background: #171e2e; border: 1px solid #26304a; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+  .doc h2 { border-bottom: 1px solid #26304a; padding-bottom: 8px; }
+  .doc pre { background: #0d1220; padding: 12px; border-radius: 8px; overflow-x: auto; }
+  .doc code { background: #0d1220; padding: 2px 5px; border-radius: 4px; font-size: 0.92em; }
+  .doc table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  .doc th, .doc td { border: 1px solid #2a3550; padding: 6px 10px; text-align: left; }
+  .doc img { max-width: 100%; }
+  footer { text-align: center; color: #5b6577; padding: 24px; font-size: 13px; }
+  .error { color: #ff9d9d; }
+</style>
+</head>
+<body>
+<header>
+  <h1>deepseek-</h1>
+  <p>识图 MCP 配置指南 · Vision Bridge 实施计划（实战验证版）</p>
+</header>
+<main>
+  <div class="cards">
+    <div class="card">
+      <h2>zai-vision 配置指南</h2>
+      <p>Hook → Skill → MCP 三层识图架构（第一版）</p>
+      <a href="zai-vision-guide/README.md" target="_blank">查看原文</a>
+    </div>
+    <div class="card">
+      <h2>Vision Bridge 实战验证版 v2</h2>
+      <p>MiMo 主 + 智谱兜底，含已验证事实与避坑经验</p>
+      <a href="vision-bridge-mcp-agent-execution-plan-lean-v3-2026-08-06.md" target="_blank">查看原文</a>
+    </div>
+    <div class="card">
+      <h2>计划初版存档</h2>
+      <p>经验改写前的第一版，保留存档</p>
+      <a href="vision-bridge-mcp-agent-execution-plan-lean-v3-2026-08-06.first.md" target="_blank">查看原文</a>
+    </div>
+  </div>
+  <section id="rendered">
+    <p>正在加载文档…（若未显示，请点击上方链接查看原文）</p>
+  </section>
+</main>
+<footer>由 GitHub + Cloudflare Pages 自动部署</footer>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+  const DOCS = [
+    { file: "zai-vision-guide/README.md", title: "zai-vision 识图 MCP 配置指南" },
+    { file: "vision-bridge-mcp-agent-execution-plan-lean-v3-2026-08-06.md", title: "Vision Bridge 实施计划（实战验证版 v2）" },
+    { file: "vision-bridge-mcp-agent-execution-plan-lean-v3-2026-08-06.first.md", title: "Vision Bridge 实施计划（初版存档）" }
+  ];
+  async function render() {
+    const box = document.getElementById("rendered");
+    if (!window.marked) { box.innerHTML = '<p class="error">Markdown 渲染库加载失败，请使用上方链接查看原文。</p>'; return; }
+    let html = "";
+    for (const doc of DOCS) {
+      try {
+        const res = await fetch(doc.file);
+        if (!res.ok) throw new Error(res.status);
+        const text = await res.text();
+        html += '<article class="doc"><h2>' + doc.title + '</h2>' + window.marked.parse(text) + '</article>';
+      } catch (e) {
+        html += '<article class="doc"><h2>' + doc.title + '</h2><p class="error">加载失败，请点击上方链接查看原文。</p></article>';
+      }
+    }
+    box.innerHTML = html || '<p class="error">没有可显示的文档。</p>';
+  }
+  render();
+</script>
+</body>
+</html>
